@@ -27,7 +27,7 @@ conda install -y bcolz
 conda upgrade -y --all
 
 # install and configure theano
-pip install theano
+pip install tensorflow-gpu
 echo "[global]
 device = gpu
 floatX = float32
@@ -39,10 +39,10 @@ root = /usr/local/cuda" > ~/.theanorc
 pip install keras==1.2.2
 mkdir ~/.keras
 echo '{
-    "image_dim_ordering": "th",
+    "image_dim_ordering": "tf",
     "epsilon": 1e-07,
     "floatx": "float32",
-    "backend": "theano"
+    "backend": "tensorflow"
 }' > ~/.keras/keras.json
 
 # install cudnn libraries
